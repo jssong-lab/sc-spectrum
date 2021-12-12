@@ -88,9 +88,8 @@ def clr_transform(
             
     """
     
-    g = np.prod(df.values + pseudo, axis = 0) ** (1. / df.shape[0])
-    
-    X_clr = np.log((df.values + pseudo) / g)
+    X_clr = np.log(df.values + pseudo)
+    X_clr -= np.mean(X_clr, axis = 0)
     
     df_clr = pd.DataFrame(X_clr.T,
                           index = df.columns,
