@@ -23,7 +23,7 @@ from scipy.spatial.distance import squareform
 
 from sklearn.metrics import silhouette_score
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-f_rna", "--file_rna", type = str, required = True,
                         help = ("The file containing the RNA count data.    \n"
@@ -63,8 +63,8 @@ if __name__ == '__main__':
     
     
     cbmc_rna_pca = preprocess_rna(args.file_rna, args.n_pc, random_state)
-    cbmc_adt_clr = preprocess_adt(args.file_adt)
-    
+    cbmc_adt_clr = preprocess_adt(args.file_adt, list(cbmc_rna_pca.index))
+    # cbmc_adt_clr = pd.read_csv(args.file_adt, header = 0, index_col = 0).T.loc[cbmc_rna_pca.index]
     
     Gs_rna = rbf_neighbor_graph(cbmc_rna_pca.values.astype(np.float32), adaptive = True)
     L_rna, w_rna, v_rna = sparse_spectral(Gs_rna, n_clust = n_clust, random_state = random_state)
@@ -119,4 +119,3 @@ if __name__ == '__main__':
                              columns = ["UMAP 1", "UMAP 2"])
     cbmc_umap.to_csv(outdir.rstrip("/") + "/cbmc_scml_umap.csv")
     
-     
