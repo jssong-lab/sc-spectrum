@@ -13,10 +13,10 @@ import torch
 
 from cbmc_preprocessing import preprocess_rna, preprocess_adt
 
-from model.scml import rbf_neighbor_graph, sparse_spectral, spectral_clustering
-from model.scml import scml, soft_scml
+from sc_spectrum.scml import rbf_neighbor_graph, sparse_spectral, spectral_clustering
+from sc_spectrum.scml import scml, soft_scml
 
-from model.visualization import umap_visualization
+from sc_spectrum.visualization import umap_visualization
 
 from scipy.spatial.distance import pdist
 from scipy.spatial.distance import squareform
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     parser.add_argument("--n_clust", type = int, required = True)
     parser.add_argument("--alpha", type = float, default = 100.)
     parser.add_argument("--n_pc", type = int, default = 30)
-    parser.add_argument("--use_gpu", type = bool, default = True)
+    parser.add_argument("--use_gpu", action = "store_true")
     parser.add_argument("--random_state", type = int, default = 12345678)
     parser.add_argument("-o", "--outdir", type = str, default = "./",
                         help = ("A path to a directory where the output     \n"

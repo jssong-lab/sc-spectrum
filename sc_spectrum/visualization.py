@@ -50,7 +50,7 @@ def umap_visualization(
     
     mapper = umap.UMAP(random_state = random_state, n_neighbors = 30,
                    set_op_mix_ratio = 1, local_connectivity = 1,
-                   min_dist = 0.3, metric='cosine')
+                   min_dist = 0.3, metric="cosine")
     
     mapper.fit(emb_norm)
     emb_umap = mapper.embedding_

@@ -9,7 +9,7 @@ Created on Fri Nov  5 14:14:52 2021
 import numpy as np
 import pandas as pd
 from typing import List
-from model.preprocessing import rna_pca, clr_transform 
+from sc_spectrum.preprocessing import rna_pca, clr_transform 
 
 
 def filter_species(

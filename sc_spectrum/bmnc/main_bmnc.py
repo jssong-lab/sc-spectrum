@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser.add_argument("--n_clust", type = int, required = True)
     parser.add_argument("--alpha", type = float, default = 100.)
     parser.add_argument("--n_pc", type = int, default = 30)
-    parser.add_argument("--use_gpu", type = bool, default = True)
+    parser.add_argument("--use_gpu", action = "store_true")
     parser.add_argument("--random_state", type = int, default = 12345678)
     parser.add_argument("-o", "--outdir", type = str, default = "./",
                         help = ("A path to a directory where the output     \n"
