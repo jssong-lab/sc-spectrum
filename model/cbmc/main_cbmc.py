@@ -108,9 +108,9 @@ if __name__ == "__main__":
                                     cluster_methods):
         vecs_norm = vecs[:, :n_clust] / np.linalg.norm(vecs[:, :n_clust], axis = 1, keepdims = True)
         f.write("{},".format(method))
-        f.write("{},".format(silhouette_score(D_rna, labels)))
-        f.write("{},".format(silhouette_score(D_adt, labels)))
-        f.write("{}\n".format(silhouette_score(vecs_norm, labels)))
+        f.write("{},".format(silhouette_score(D_rna, labels, metric = "precomputed")))
+        f.write("{},".format(silhouette_score(D_adt, labels, metric = "precomputed")))
+        f.write("{}\n".format(silhouette_score(vecs_norm, labels, metric = "euclidean")))
         
     f.close()
             
