@@ -3,10 +3,10 @@
 from distutils.core import setup
 
 
-setup(name="model",
+setup(name="sc_spectrum",
       version="0.0.0",
       description="Multilayer spectral clustering for CITEseq datasets",
       author="Jacob Leistico",
       url="",
-      packages=["model", "model.cbmc", "model.bmnc"],
+      packages=["sc_spectrum", "sc_spectrum.cbmc", "sc_spectrum.bmnc"],
       )
