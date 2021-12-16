@@ -65,7 +65,7 @@ if __name__ == '__main__':
     w_scml, v_scml, scml_cls = scml([Gs_rna, Gs_adt], n_clust = n_clust,
                                     device = device, alpha = alpha, random_state = random_state)
     
-    np.save(outdir.rstrip("/") + "bmnc_v_scml_" + alpha, v_scml)
-    np.save(outdir.rstrip("/") + "bmnc_w_scml_" + alpha, w_scml)
-    np.save(outdir.rstrip("/") + "bmnc_cluster_labels_" + alpha, scml_cls)
+    np.save(outdir.rstrip("/") + "/bmnc_v_scml_" + str(alpha), v_scml)
+    np.save(outdir.rstrip("/") + "/bmnc_w_scml_" + str(alpha), w_scml)
+    np.save(outdir.rstrip("/") + "/bmnc_cluster_labels_" + str(alpha), scml_cls)
     
