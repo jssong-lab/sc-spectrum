@@ -95,8 +95,8 @@ if __name__ == "__main__":
                     header = True, index = True)
     
     
-    D_adt = squareform(pdist(cbmc_adt_clr.values, metric = "euclidean"))
-    D_rna = squareform(pdist(cbmc_rna_pca.values, metric = "euclidean"))
+    D_adt = squareform(pdist(cbmc_adt_clr.values.astype(np.float32), metric = "euclidean"))
+    D_rna = squareform(pdist(cbmc_rna_pca.values.astype(np.float32), metric = "euclidean"))
     
     # if(comp_file):
     #     comp_labels = pd.read_csv(comp_file, header = True, index = True).loc[cbmc_rna_pca.index]

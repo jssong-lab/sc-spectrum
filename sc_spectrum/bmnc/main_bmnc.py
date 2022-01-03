@@ -12,8 +12,8 @@ import torch
 
 from bmnc_preprocessing import preprocess_rna, preprocess_adt
 
-from model.scml import rbf_neighbor_graph, sparse_spectral, spectral_clustering
-from model.scml import scml
+from sc_spectrum.scml import rbf_neighbor_graph, sparse_spectral, spectral_clustering
+from sc_spectrum.scml import scml
 
 
 if __name__ == '__main__':
