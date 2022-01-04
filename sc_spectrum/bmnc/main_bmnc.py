@@ -43,7 +43,6 @@ if __name__ == '__main__':
     alpha = args.alpha
     random_state = args.random_state
     outdir = args.outdir
-    comp_file = args.comp_file
     
     use_gpu = args.use_gpu
     if use_gpu and torch.cuda.is_available():
