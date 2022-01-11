@@ -20,14 +20,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-f_rna", "--file_rna", type = str, required = True,
                         help = ("The file containing the RNA count data.    \n"
-                                "(GSE100866_CBMC_8K_13AB_10X-RNA_umi.csv.gz)\n"
-                                "Can be downloaded from GSE100866. Required"))
+                                "Required."))
     parser.add_argument("-f_adt", "--file_adt", type = str, required = True,
                         help = ("The file containing the ADT count data.    \n"
-                                "(GSE100866_CBMC_8K_13AB_10X-ADT_umi.csv.gz)\n"
-                                "Can be downloaded from GSE100866. Required"))
+                                "Required."))
     parser.add_argument("--n_clust", type = int, required = True)
-    parser.add_argument("--alpha", type = float, default = 100.)
+    parser.add_argument("--alpha", type = float, default = 1.)
     parser.add_argument("--n_pc", type = int, default = 50)
     parser.add_argument("--use_gpu", action = "store_true")
     parser.add_argument("--random_state", type = int, default = 12345678)
