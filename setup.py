@@ -8,5 +8,7 @@ setup(name="sc_spectrum",
       description="Multilayer spectral clustering for CITEseq datasets",
       author="Jacob Leistico",
       url="",
-      packages=["sc_spectrum", "sc_spectrum.cbmc", "sc_spectrum.bmnc"],
+      package_dir={'': 'src'},
+      # packages=["sc_spectrum", "sc_spectrum.cbmc", "sc_spectrum.bmnc"],
+      packages=find_packages(where='src')
       )

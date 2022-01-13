@@ -13,7 +13,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-def umap_visualization(
+def umap_embed(
     embedding: np.ndarray,
     n_clust: int,
     random_state: int = 12345678,
