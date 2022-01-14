@@ -16,7 +16,7 @@ from cbmc_preprocessing import preprocess_rna, preprocess_adt
 from sc_spectrum.scml import rbf_neighbor_graph, sparse_spectral, spectral_clustering
 from sc_spectrum.scml import scml, soft_scml
 
-from sc_spectrum.visualization import umap_visualization
+from sc_spectrum.visualization import umap_embed
 
 from scipy.spatial.distance import pdist
 from scipy.spatial.distance import squareform
