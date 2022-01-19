@@ -8,6 +8,5 @@ setup(name="sc_spectrum",
       author="Jacob Leistico",
       url="",
       package_dir={'': 'src'},
-      # packages=["sc_spectrum", "sc_spectrum.cbmc", "sc_spectrum.bmnc"],
       packages=find_packages(where='src')
       )
