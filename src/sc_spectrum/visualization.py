@@ -44,6 +44,7 @@ def umap_scatter(
     ax: plt.axes,
     reduction: pd.DataFrame,
     cluster_labels: np.ndarray,
+    show_labels: bool = True,
     legend: bool = True,
 ) -> None:
     """
@@ -80,7 +81,8 @@ def umap_scatter(
         rx = reduction.loc[barcodes].iloc[:, 0]
         ry = reduction.loc[barcodes].iloc[:, 1]
         ax.scatter(rx, ry, s=3, linewidths=0, alpha=1, color=colors[i], label=f"Clus. {(label):d}: ({n_label:d} cells)")
-        ax.text(rx.median(), ry.median(), (label), ha='center', va='center')
+        if(show_labels):
+            ax.text(rx.median(), ry.median(), (label), ha='center', va='center')
     
     if(legend):
         leg = ax.legend(loc='upper left', bbox_to_anchor=(1.01, 1.01), 
